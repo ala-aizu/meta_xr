@@ -38,9 +38,17 @@ public class RayGunController : MonoBehaviour
         {
             endPoint = hit.point;   
 
-            Quaternion rotation = Quaternion.LookRotation(-hit.normal);
-            GameObject rayImpact = Instantiate(rayImpactPrefab, hit.point, rotation);
-            Destroy(rayImpact, 1);
+            GhostController ghost = hit.collider.GetComponent<GhostController>();
+            if (ghost != null)
+            {
+                ghost.KillGhost();
+            }
+            else
+            {
+                Quaternion rotation = Quaternion.LookRotation(-hit.normal);
+                GameObject rayImpact = Instantiate(rayImpactPrefab, hit.point, rotation);
+                Destroy(rayImpact, 1);
+            }
         }
         else
         {

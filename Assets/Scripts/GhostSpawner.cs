@@ -39,7 +39,7 @@ public class GhostSpawner : MonoBehaviour
                out Vector3 norm
            );
            if (hasFoundPosition) {  
-               Vector3 position = pos + norm * -1f;
+               Vector3 position = pos + norm * 1f;
                position.y = 0;
                Instantiate(ghostPrefab, position, Quaternion.identity);
                return;
