@@ -1185,7 +1185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &146606754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2948,6 +2948,7 @@ GameObject:
   - component: {fileID: 404185524}
   - component: {fileID: 404185523}
   - component: {fileID: 404185525}
+  - component: {fileID: 404185526}
   m_Layer: 0
   m_Name: NavMesh
   m_TagString: Untagged
@@ -3025,6 +3026,18 @@ MonoBehaviour:
     Scaling: 0
     Alignment: 0
     IgnorePrefabSize: 0
+--- !u!114 &404185526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404185522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4152bcc11ac4bdfb913848bc085590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &405599599
 GameObject:
   m_ObjectHideFlags: 0
@@ -7457,7 +7470,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013453090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
