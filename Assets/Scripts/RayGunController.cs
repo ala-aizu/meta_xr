@@ -12,6 +12,11 @@ public class RayGunController : MonoBehaviour
 
     public LayerMask layerMask;
 
+    public AudioSource source;
+    public AudioClip clip;
+
+    public GameObject rayImpactPrefab;
+
     void Update()
     {
         if (OVRInput.GetDown(triggerButton))
@@ -22,6 +27,8 @@ public class RayGunController : MonoBehaviour
         
     public void Shoot() 
     {
+        source.PlayOneShot(clip);
+        
         Ray ray = new Ray(shootingPoint.position, shootingPoint.forward);
         bool hasHit = Physics.Raycast(ray, out RaycastHit hit, maxLineDistance);
         
@@ -30,6 +37,10 @@ public class RayGunController : MonoBehaviour
         if (hasHit)
         {
             endPoint = hit.point;   
+
+            Quaternion rotation = Quaternion.LookRotation(-hit.normal);
+            GameObject rayImpact = Instantiate(rayImpactPrefab, hit.point, rotation);
+            Destroy(rayImpact, 1);
         }
         else
         {
@@ -43,6 +54,7 @@ public class RayGunController : MonoBehaviour
         line.SetPosition(1, endPoint);
 
         Destroy(line.gameObject, lineShowTimer);
+
     }
 
 }
